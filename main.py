@@ -1,4 +1,11 @@
-import os, logging, discord
+import os, logging, discord, sys, subprocess
+
+def install_groq():
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "groq"])
+
+# Execute the installation
+install_groq()
+
 from dotenv import load_dotenv
 from discord.ext import commands
 from groq import Groq
