@@ -165,7 +165,10 @@ async def on_message(message):
         await message.channel.send(f"{message.author.mention}, watch your language ⚠️")
         return
 
-    # ✅ single response (no spam)
+    if not "@bot" in message.content.lower() or "!no_reply" in message.content.lower():
+        return
+        
+        # ✅ single response (no spam)
     mode = "!code" if "code" in content else "!biz"
 
     history = await get_recent_history(message.channel)
