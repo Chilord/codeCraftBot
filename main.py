@@ -14,10 +14,14 @@ from google import genai   # ✅ new SDK
 load_dotenv()
 
 GROQ_KEY = os.getenv("GROQ_API_KEY")
+if GROQ_KEY:
+    print("Key available")
+else:
+    print("No key")
 API_KEY = os.getenv("GEMINI_API_KEY")
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-groq_client = Groq(api_key=GROQ_KEY)
+groq_client = Groq()
 client = genai.Client(api_key=API_KEY)  # ✅ new client
 
 
