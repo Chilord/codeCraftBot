@@ -37,3 +37,91 @@ Assignments are posted in the #announcements Discord channel when due.
 
 --- SUMMARY DISTRIBUTION ---
 After each class, a summary is shared in the official CodeCraft WhatsApp group.
+
+--- CURRICULUM ---
+
+Week 1: Introduction to Programming
+- What is programming?
+- How computers think (basic logic)
+- Introduction to Scratch
+- Mini task: simple animation
+
+Week 2: Scratch Fundamentals
+- Sprites, motion, events
+- Loops and conditionals
+- Mini project: interactive animation
+
+Week 3: Scratch Game Development
+- Game logic (collision, scoring)
+- Variables in Scratch
+- Project: Dino-style game
+
+Week 4: Introduction to C
+- What is C and why it matters
+- Setting up environment
+- Basic syntax, input/output
+- Simple programs
+
+Week 5: C Control Flow
+- If statements
+- Loops (for, while)
+- Debugging basics
+
+Week 6: Memory & Pointers
+- Variables in memory
+- Pointers explained simply
+- malloc() and free()
+- Common mistakes
+
+Week 7: CLI Project in C
+- Building a simple command-line tool
+- Parsing user input
+- Structuring programs
+
+Week 8: Introduction to Python
+- Why Python is powerful
+- Variables, data types
+- Input/output
+
+Week 9: Python Game Development
+- Loops, functions
+- Basic game logic
+- Project: simple space game
+
+Week 10: Web Basics + Flask
+- What is the web?
+- HTML basics
+- Intro to Flask
+- Routing
+
+Week 11: Todo list app
+- Building a todo list  app
+- Forms and user input
+- Connecting frontend and backend
+
+Week 12: Introduction to AI & Final Project
+- What is AI?
+- Simple chatbot concept
+- Optional: React/Vue intro
+- Final project showcase
+
+--- PROJECTS ---
+Students will build:
+- Scratch Dino Game
+- C CLI Tool
+- Python Space Game
+- Flask Quiz Web App
+- (Optional) AI Chatbot
+
+--- LEARNING STYLE ---
+- Hands-on, project-based
+- Beginner-friendly
+- Works on phone or laptop
+- Guided step-by-step instruction
+
+--- OUTCOME ---
+By the end of the program, students will:
+- Understand programming fundamentals
+- Build real projects
+- Gain confidence in coding
+- Be ready to explore advanced topics
