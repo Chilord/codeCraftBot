@@ -40,8 +40,15 @@ def answer(prompt):
         )
         return getattr(response, "text", "⚠️ No response")
     except Exception as e:
-        print(f"⚠️ Error: {str(e)}")
-        return "Sorry, there was a problem processing your request. :("
+        try:
+            response = client.models.generate_content(
+                model="gemini-2.0-flash-lite",
+                contents=prompt
+            )
+            return getattr(response, "text", "⚠️ No response")
+        except Exception as e:
+            print(f"⚠️ Error: {str(e)}")
+            return "Sorry, there was a problem processing your request. :("
     
 
 # =====================
