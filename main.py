@@ -1,14 +1,18 @@
 import os, logging, discord
 from dotenv import load_dotenv
 from discord.ext import commands
+from groq import Groq
 from google import genai   # ✅ new SDK
 
 load_dotenv()
 
+GROQ_KEY = os.getenv("GROQ_API_KEY")
 API_KEY = os.getenv("GEMINI_API_KEY")
 TOKEN = os.getenv("DISCORD_TOKEN")
 
+groq_client = Groq(api_key=GROQ_KEY)
 client = genai.Client(api_key=API_KEY)  # ✅ new client
+
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 
@@ -32,23 +36,31 @@ with open(context_path, "r", encoding="utf-8") as f:
 # =====================
 # AI CALL
 # =====================
+def ask_groq(prompt):
+    completion = groq_client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[{"role": "user", "content": prompt}]
+    )
 def answer(prompt):
     try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt
-        )
-        return getattr(response, "text", "⚠️ No response")
-    except Exception as e:
+        ask_groq(prompt)
+    except Exception as e:            
         try:
             response = client.models.generate_content(
-                model="gemini-2.0-flash-lite",
+                model="gemini-2.5-flash",
                 contents=prompt
             )
             return getattr(response, "text", "⚠️ No response")
         except Exception as e:
-            print(f"⚠️ Error: {str(e)}")
-            return "Sorry, there was a problem processing your request. :("
+            try:
+                response = client.models.generate_content(
+                    model="gemini-2.0-flash-lite",
+                    contents=prompt
+                )
+                return getattr(response, "text", "⚠️ No response")
+            except Exception as e:
+                print(f"⚠️ Error: {str(e)}")
+                return "Sorry, there was a problem processing your request. :("
     
 
 # =====================
