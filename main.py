@@ -52,9 +52,10 @@ def ask_groq(prompt):
         model="llama-3.3-70b-versatile",
         messages=[{"role": "user", "content": prompt}]
     )
+    return completion.choices[0].message.content
 def answer(prompt):
     try:
-        ask_groq(prompt)
+        return ask_groq(prompt)
     except Exception as e:            
         try:
             response = client.models.generate_content(
